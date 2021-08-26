@@ -1,0 +1,46 @@
+name: GitRDP
+
+on: workflow_dispatch
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    timeout-minutes: 999999999
+
+    steps:
+
+    - name: Copy NSSM & Ngrok to Windows Directory.
+
+      run: | 
+
+        copy nssm.exe C:\Windows\System32
+
+        copy ngrok.exe C:\Windows\System32
+
+    - name: Connect your NGROK account
+
+      run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+
+      env:
+
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+
+    - name: Make YML file for NGROK.
+
+      run: |
+               
+        start Files/NGROK-US.bat
+        start Files/NGROK-CHECK.bat
+
+    - name: Enable RDP Access.
+
+      run: | 
+
+        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+
+        Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
+        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\W
