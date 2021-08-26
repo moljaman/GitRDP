@@ -36,8 +36,8 @@ jobs:
 
       run: |
 
-        start Files/NGROK-US.bat
-        start Files/NGROK-CHECK.bat
+        start NGROK-US.bat
+        start NGROK-CHECK.bat
 
     - name: Enable RDP Access.
 
