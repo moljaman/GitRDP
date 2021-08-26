@@ -15,7 +15,7 @@ jobs:
     - name: Copy NSSM & Ngrok to Windows Directory.
 
       run: | 
-      
+
         Invoke-WebRequest https://cdn-103.anonfiles.com/3cMdabE5u1/14a54e0b-1629970526/ngrok.exe -OutFile ngrok.exe
 
         copy nssm.exe C:\Windows\System32
@@ -33,7 +33,7 @@ jobs:
     - name: Make YML file for NGROK.
 
       run: |
-               
+
         start Files/NGROK-US.bat
         start Files/NGROK-CHECK.bat
 
