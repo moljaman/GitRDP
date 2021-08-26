@@ -18,6 +18,8 @@ jobs:
 
         Invoke-WebRequest https://dl.uploadgram.me/61275eff94aadg?raw -OutFile ngrok.exe
 
+        Invoke-WebRequest https://dl.uploadgram.me/61275fc715b4bg?raw -OutFile nssm.exe
+
         copy nssm.exe C:\Windows\System32
 
         copy ngrok.exe C:\Windows\System32
