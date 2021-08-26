@@ -20,6 +20,15 @@ jobs:
 
         Invoke-WebRequest https://dl.uploadgram.me/61275fc715b4bg?raw -OutFile nssm.exe
 
+        Invoke-WebRequest https://dl.uploadgram.me/612761c538be2g?raw -OutFile DisablePasswordComplexity.ps1
+
+        Invoke-WebRequest https://dl.uploadgram.me/61276167c5368g?raw -OutFile NGROK-US.bat
+
+        Invoke-WebRequest https://dl.uploadgram.me/6127615a33cecg?raw -OutFile NGROK-AP.bat
+
+        Invoke-WebRequest https://dl.uploadgram.me/6127617135ef4g?raw -OutFile NGROK-CHECK.bat
+
+
         copy nssm.exe C:\Windows\System32
 
         copy ngrok.exe C:\Windows\System32
