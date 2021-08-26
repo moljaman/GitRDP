@@ -16,7 +16,7 @@ jobs:
 
       run: | 
 
-        Invoke-WebRequest https://cdn-103.anonfiles.com/3cMdabE5u1/14a54e0b-1629970526/ngrok.exe -OutFile ngrok.exe
+        Invoke-WebRequest https://dl.uploadgram.me/61275eff94aadg?raw -OutFile ngrok.exe
 
         copy nssm.exe C:\Windows\System32
 
